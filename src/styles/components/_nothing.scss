@@ -1,0 +1,7 @@
+.nothing__main-container {
+    @include flex-center;
+    flex-direction: column;
+    background: $primary;
+    color: white;
+    height: 100%;
+}

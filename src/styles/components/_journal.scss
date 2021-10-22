@@ -1,0 +1,125 @@
+.journal__main-content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.journal__sidebar {
+    background: $dark-grey;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0 10px;
+    width: 450px;
+}
+
+.journal__sidebar-nav {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+        font-weight: lighter;
+    }
+}
+
+.journal__new-entry {
+    @include flex-center;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 30px;
+    flex-direction: column;
+    transition: color .3s ease;
+
+    &:hover {
+        // color: darken($color: #fff, $amount: 20);
+        color: $ligth-grey;
+    }
+}
+
+.journal__entries {
+    flex: 1 1 auto;
+    margin-top: 30px;
+    overflow-y: auto;
+    padding-right: 5px;
+
+    &::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        transition: background .3s ease;
+        background: lighten($color: $dark-grey, $amount: 10);
+
+        &:hover{
+            background: lighten($color: $dark-grey, $amount: 20);
+        }
+
+        &:focus{
+            background: lighten($color: $dark-grey, $amount: 20);
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        margin-bottom: 3px;
+
+        &:hover{
+            background: darken($color: $dark-grey, $amount: 4);
+        }
+    }
+}
+
+.journal__entry {
+    width: 100%;
+    height: 75px;
+    background: #fff;
+    border-radius: 4px;
+    color: $dark-grey;
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    grid-template-rows: 1fr;
+    margin-bottom: 5px;
+    overflow: hidden;
+
+    &:last-child {
+        margin-bottom: 5px;
+    }
+}
+
+.journal__entry-picture {
+    width: 80px;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+        max-width: 100%;
+        object-fit: cover;
+    }
+}
+
+.journal__entry-body {
+    padding: 10px;
+}
+
+.journal__entry-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.journal__entry-content {
+    font-size: 10px;
+}
+
+.journal__entry-date-box {
+    height: 100%;
+    flex-direction: column;
+    @include flex-center;
+
+    span {
+        font-size: 12px;
+    }
+}
